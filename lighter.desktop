@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Exec=sudo /usr/bin/lighter
+Icon=
+Categories=
+Hidden=false
+NoDisplay=true
+Terminal=false
+X-GNOME-Autostart-enabled=true
+X-KDE-autostart-after=panel
+X-KDE-StartupNotify=false
+Name[en_US]=lighter
+Name=lighter
+Comment[en_US]=MacBook automatic light sensor script
+Comment=MacBook automatic light sensor script
