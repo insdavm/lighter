@@ -42,13 +42,13 @@ my $sensor="/sys/devices/platform/applesmc.768/light";
 # Bottom range of light ammount we care about.
 my $light_care=40;
 # Minimum light ammount.
-my $screen_min=300;
+my $screen_min=500;
 # Maximum light ammount (resolution).
 my $screen_max=1808;
 # Minimum light ammount when AC is connected.
 my $screen_min_ac=700;
 # Brightness when laptop is on battery and in complete darkness.
-my $screen_min_ac_dark=80;
+my $screen_min_ac_dark=500;
 # Steps for gradual fade.
 my $screen_step=50;
 # Delay between steps in the fade.
