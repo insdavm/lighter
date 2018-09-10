@@ -1,12 +1,12 @@
 #!/usr/bin/env perl
 #
-# This is a script to automatically adjust Macbook Air (2012) screen and keyboard
+# This is a script to automatically adjust Macbook Pro 8,1 screen and keyboard
 # backlight brightness using the built in light sensor.
 #
-#  Author: Janis Jansons (Janhouse) - janis.jansons@janhouse.lv
-#  
+#  Original Author: Janis Jansons (Janhouse) - janis.jansons@janhouse.lv
+#  Macbook Pro 8,1 Modifications: Austin (insdavm) - github.com/insdavm
 #
-# Dependencies: notify-send, Macbook Air (applesmc module), listed perl modules.
+# Dependencies: notify-send, IO::Async (can be installed with cpan)
 #
 
 use warnings;
@@ -39,16 +39,16 @@ my $sensor="/sys/devices/platform/applesmc.768/light";
 
 
 # Stuff for screen backlight.
-# Bottom range of light ammount we care about.
+# Bottom range of light amount we care about.
 my $light_care=40;
-# Minimum light ammount.
-my $screen_min=500;
-# Maximum light ammount (resolution).
+# Minimum light amount.
+my $screen_min=300;
+# Maximum light amount (resolution).
 my $screen_max=1808;
-# Minimum light ammount when AC is connected.
+# Minimum light amount when AC is connected.
 my $screen_min_ac=700;
 # Brightness when laptop is on battery and in complete darkness.
-my $screen_min_ac_dark=500;
+my $screen_min_ac_dark=350;
 # Steps for gradual fade.
 my $screen_step=50;
 # Delay between steps in the fade.
@@ -64,13 +64,13 @@ my $screen_script="/sys/class/backlight/intel_backlight/brightness";
 my $keyb_step=4;
 # Delay between steps in the fade.
 my $keyb_fade_wait=80000;
-# Bottom range of light ammount we care about.
+# Bottom range of light amount we care about.
 my $keyb_light_care=20;
-# Minimum light ammount.
+# Minimum light amount.
 my $keyb_min=0;
 # Maximum keyboard brightness on battery.
 my $keyb_max_bat=2;
-# Maximum light ammount.
+# Maximum light amount.
 my $keyb_max=180; #actual max = 255.
 # Minimum difference to change the brightness.
 my $keyb_min_diff=20;
