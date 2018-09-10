@@ -1,15 +1,16 @@
 Lighter
 =======
 
-Script to automatically control Macbook Air (2012) screen and keyboard backlight brightness using data from the built in light sensor.
+Perl script to auto-adjust Macbook Pro 8,1 screen brightness and keyboard backlight based on the ambient light sensor 
 
-Dependencies: notify-send, Macbook Air (applesmc module), Perl modules listed in the lighter.pl
+Dependencies: notify-send, IO::Async perl module (can be installed with ```$ cpan IO::Async```)
 
 
 Usage
 =======
 
-Run it (probably as root).
+* Run it as root (so the script can access ```/sys/class``` and associated directories)  
+*or*  
+* Have it autostart when KDE/Gnome starts (just run ```$ sudo make install``` in the source directory to install the autostart file).  You might need NOPASSWD in the sudoers file for your user for this to work.
 
 Create file that contains word "locked" in /tmp/.apple_sensor.txt to temporarily disable automatic changing of backlight.
-(I would suggest a menu entry that creates/removes that file.)
